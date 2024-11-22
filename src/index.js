@@ -14,11 +14,6 @@ const app = express();
 const port = process.env.PORT || 3001;
 //connect to DB
 connectToDb();
-
-//
-//中間件
-//
-app.use(cors());
 // 允许来自特定来源的请求
 app.use(cors({
   origin: 'https://fpfe.vercel.app', // 设置允许的来源
