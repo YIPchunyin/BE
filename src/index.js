@@ -19,6 +19,12 @@ connectToDb();
 //中間件
 //
 app.use(cors());
+// 允许来自特定来源的请求
+app.use(cors({
+  origin: 'https://fpfe.vercel.app', // 设置允许的来源
+  methods: ['GET', 'POST', 'OPTIONS'], // 设置允许的方法
+  allowedHeaders: ['Content-Type'] // 设置允许的请求头
+}));
 // 使用 body-parser 中間件
 app.use(bodyParser.urlencoded({ extended: true })); // 設置 extended 為 true
 app.use(bodyParser.json());
